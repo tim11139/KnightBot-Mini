@@ -1,6 +1,15 @@
 /**
  * WhatsApp MD Bot - Main Entry Point
  */
+const http = require('http');
+
+const port = process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+  res.end('Bot running');
+}).listen(port, () => {
+  console.log('Listening on port', port);
+});
 process.env.PUPPETEER_SKIP_DOWNLOAD = 'true';
 process.env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = 'true';
 process.env.PUPPETEER_CACHE_DIR = process.env.PUPPETEER_CACHE_DIR || '/tmp/puppeteer_cache_disabled';
